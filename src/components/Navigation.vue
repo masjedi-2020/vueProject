@@ -9,11 +9,13 @@
   
           <!-- Desktop links -->
           <div class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition">About</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition">Products</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            <router-link :to="{name: 'home'}" class="text-gray-700 hover:text-blue-600 transition">Home</router-link>
+            <router-link :to="{name: 'about'}" class="text-gray-700 hover:text-blue-600 transition">About</router-link>
+            <router-link :to="{name: 'product'}" class="text-gray-700 hover:text-blue-600 transition">Products</router-link>
+            <router-link :to="{name: 'contact'}" class="text-gray-700 hover:text-blue-600 transition">Contact</router-link>
+          
           </div>
+
   
           <!-- Mobile menu button -->
           <div class="flex items-center md:hidden">
@@ -33,10 +35,10 @@
   
       <!-- Mobile menu -->
       <div v-if="isOpen" class="md:hidden bg-white border-t border-gray-200">
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Products</a>
-        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+           <router-link :to="{name: 'home'}"class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</router-link>
+          <router-link :to="{name: 'about'}"class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</router-link>
+        <router-link :to="{name: 'product'}"class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Products</router-link>
+        <router-link :to="{name: 'contact'}"class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</router-link>
       </div>
     </nav>
   </template>
@@ -48,6 +50,12 @@
   </script>
   
   <style>
-  /* optional custom styles if needed */
+  .router-link-active {
+    color: aliceblue;
+    background-color: rgb(74, 74, 215);
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow:inset;
+  }
   </style>
   
